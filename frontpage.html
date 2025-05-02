@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyShop – Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="loginStatus.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <!-- Logo -->
+      <h1 class="logo">MyShop</h1>
+
+      <!-- Main navigation -->
+      <nav role="navigation" aria-label="Main menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart, user-status, plus the extra buttons -->
+      <div class="user-section">
+        <div class="cart">
+          <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+
+        <!-- loginStatus.js will populate this with Login/Register or “Hello, … / Logout” -->
+        <p id="user-status">Checking login status…</p>
+
+        <!-- Restored per your original frontpage -->
+        <ul class="user-links">
+          <li><a href="index.html">Index</a></li>
+          <li><a href="dashboard.html">Admin Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <h2>Welcome to MyShop!</h2>
+      <p>Your one-stop online store for everything!</p>
+    </section>
+
+    <section id="products" class="products">
+      <h2>Featured Products</h2>
+      <div class="product-list">
+        <div class="product" data-id="prod-1">
+          <img src="images/shoes.png" alt="Stylish running shoes">
+          <h3>Running Shoes</h3>
+          <p>$49.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="prod-2">
+          <img src="images/shirt.png" alt="Vintage blue shirt">
+          <h3>Blue Shirt</h3>
+          <p>$29.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="prod-3">
+          <img src="images/hat.png" alt="Classic baseball cap">
+          <h3>Baseball Cap</h3>
+          <p>$19.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are committed to providing quality products and an exceptional shopping experience.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyShop</p>
+  </footer>
+
+  <script>
+    // LocalStorage cart helpers
+    const getCart = () => JSON.parse(localStorage.getItem('cart') || '[]');
+    const setCart = cart => localStorage.setItem('cart', JSON.stringify(cart));
+    const updateCartCount = () =>
+      document.getElementById('cart-count').textContent = getCart().length;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+
+      document.querySelectorAll('.add-to-cart').forEach(btn =>
+        btn.addEventListener('click', e => {
+          const card  = e.target.closest('.product');
+          const id    = card.dataset.id;
+          const name  = card.querySelector('h3').innerText;
+          const price = parseFloat(card.querySelector('p').innerText.slice(1));
+
+          const cart = getCart();
+          cart.push({ id, name, price });
+          setCart(cart);
+
+          updateCartCount();
+          alert(`${name} added to cart!`);
+        })
+      );
+    });
+  </script>
+</body>
+</html>

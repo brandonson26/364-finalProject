@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <script defer src = "login.js"> </script>
+
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="login-form" onsubmit="login(event)">
+      <fieldset>
+        <label for="user_field">Username:</label>
+        <input type="text" id="user_field" name="username" required>
+        <br>
+        <label for="password_field">Password:</label>
+        <input type="password" id="password_field" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+      </fieldset>
+    </form>
+
+    <hr>
+
+    <a href="frontpage.html"> return to frontpage</a>
+</body>
+</html>
+

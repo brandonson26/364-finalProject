@@ -1,0 +1,216 @@
+/* Basic Reset - Ensures consistent styling across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Base styling for the page */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header and Navigation Bar Styling */
+header {
+  background-color: #222; /* dark background */
+  color: #fff; /* white text */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Flexbox layout for navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+/* Logo styling */
+.navbar h1.logo {
+  font-size: 1.5rem;
+}
+
+/* Layout spacing for user section (cart, login, links) */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Reset ul styling inside user-section */
+.user-section ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav spacing */
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling navigation list */
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* spacing between links */
+}
+
+/* Navigation links styling */
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hover effect on navigation links */
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* Cart button styling */
+.cart a {
+  background-color: #fff;
+  color: #222;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Hero Section Styling */
+.hero {
+  background: #e3e3e3; /* light gray background */
+  padding: 3rem;
+  text-align: center;
+}
+
+/* Product Section Layout */
+.products {
+  padding: 2rem;
+}
+
+/* Responsive grid for product listings */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Individual product card styling */
+.product {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Product image sizing */
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add to cart button */
+.product button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #222;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for button */
+.product button:hover {
+  background-color: #444;
+}
+
+/* Styling for About and Contact sections */
+#about, #contact {
+  padding: 2rem;
+  background: #f4f4f4;
+  margin-top: 1rem;
+}
+
+/* Form element styling */
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Submit button for contact form */
+form button {
+  padding: 0.5rem 1rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for submit button */
+form button:hover {
+  background-color: #444;
+}
+
+/* Footer styling */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* make user-links mirror .nav-links */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* style the list just like your main nav */
+.user-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* no extra spacing on the first item */
+.user-links li + li {
+  margin-left: 1rem;
+}
+
+/* reuse the same link look & feel */
+.user-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: inherit;              /* matches your nav’s text color */
+  text-decoration: none;
+  font-weight: 500;            /* same weight as nav links */
+  border-radius: var(--radius);/* if you use a CSS variable for rounding */
+  transition: background 0.2s;
+}
+
+.user-links a:hover {
+  background-color: var(--hover-bg); /* same hover BG as nav */
+}

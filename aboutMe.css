@@ -1,0 +1,69 @@
+/* author: */
+
+
+
+img {
+  width: 307px;
+  height: 409px;
+  border-radius: 40px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: bold;
+}
+
+table {
+  width: 350px;
+  margin-left: 10px;
+}
+
+th {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding-right: 10px;
+}
+
+caption {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  img {
+    width: 219px;
+    height: 292px;
+  }
+  table {
+    width: 350px;
+    margin-left: 75px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  img {
+    width: 384px;
+    height: 512px;
+  }
+  table {
+    width: 380px;
+  }
+}
+
+.normal-text {
+  font-weight: normal;
+}

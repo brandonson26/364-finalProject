@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart – MyShop</title>
+  <!-- global styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- page-specific styles -->
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Main">
+      <a href="frontpage.html">Home</a>
+      <a href="cart.html" class="active">Cart</a>
+      <span id="user-status"></span>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Cart</h1>
+    <div id="cart-container"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyShop</p>
+  </footer>
+
+  <!-- show login/register or logout -->
+  <script src="loginStatus.js" defer></script>
+
+  <!-- cart logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('cart-container');
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+      if (!cart.length) {
+        container.innerHTML = '<p class="empty">Your cart is empty.</p>';
+        return;
+      }
+
+      // build table
+      let html = '<table><thead><tr>'
+               +  '<th>Item</th><th>Price</th><th>Remove</th>'
+               +  '</tr></thead><tbody>';
+
+      cart.forEach((item, idx) => {
+        html += `<tr>
+          <td>${item.name}</td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td>
+            <button class="remove-item" data-idx="${idx}" aria-label="Remove ${item.name}">
+              &times;
+            </button>
+          </td>
+        </tr>`;
+      });
+
+      html += '</tbody></table>';
+      container.innerHTML = html;
+
+      // wire remove buttons
+      container.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const idx = +e.target.dataset.idx;
+          cart.splice(idx, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          // re-render
+          window.location.reload();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

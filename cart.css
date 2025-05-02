@@ -1,0 +1,73 @@
+/* Reset table styles */
+#cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  /* Header cells */
+  #cart-container th {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  /* Data cells */
+  #cart-container td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* “Remove” button */
+  #cart-container .remove-item {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  
+  /* Empty-cart message */
+  #cart-container .empty {
+    font-style: italic;
+    color: #666;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    #cart-container table,
+    #cart-container thead,
+    #cart-container tbody,
+    #cart-container th,
+    #cart-container td,
+    #cart-container tr {
+      display: block;
+    }
+  
+    #cart-container th {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    #cart-container td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    #cart-container td:before {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+  
+    /* Label each cell */
+    #cart-container td:nth-of-type(1):before { content: "Item"; }
+    #cart-container td:nth-of-type(2):before { content: "Price"; }
+    #cart-container td:nth-of-type(3):before { content: "Remove"; }
+  }
+  

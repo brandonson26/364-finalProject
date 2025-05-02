@@ -1,0 +1,53 @@
+/* author: C2C Brandon Son*/ 
+.title {
+    font-size: 25px;
+    background-color: #C6AC8F;
+    text-align: center;
+}
+
+.info {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+th {
+    background-color: #333;
+    color:white;
+}
+
+/* Zerba striping for table rows */
+tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* light grey for odd rows */
+}
+
+tr:nth-of-type(even) {
+    background-color: #ffffff; /* white for even rows */
+}
+
+body {
+    background-color: #EAE0D5;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 25px;
+        
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+}

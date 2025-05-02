@@ -1,0 +1,60 @@
+<!--Admin Dashboard Page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <script defer src="dashboard.js"></script>
+    <script src="loginStatus.js"> </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Admin Dashboard</h1>
+            <a href="frontpage.html"> Frontpage </a>
+            <p id="user-status">Checking login status...</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="dashboard-control">
+            <div class="display-table">
+                <button id="displayButton">Display Table</button> <!-- Button to display table -->
+                <p>Row Limit: 
+                    <input type="number" id="rowLimit">
+                </p>
+
+            </div>
+
+            <div class="insert-row">
+                <p>Column 1 Value: <input type="text" id="col1"></p>
+                <p>Column 2 Value: <input type="text" id="col2"></p>
+                <p>Column 3 Value: <input type="text" id="col3"></p>
+                <button id="insertRow">Insert Row</button>
+            </div>
+
+            <div class="truncate">
+                <button id="truncateButton">Truncate Table</button>
+            </div>
+            
+        </section>
+    </main>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody id="userList"></tbody>
+    </table>
+</body>
+</html>
+
+<!--Table description into chatGPT: with a sql create statement 40 clothing items (10 t-shirts, 10 sweatshirts, 10 sweatpants, 10 shorts)-->
